@@ -1,8 +1,8 @@
+import SearchPage from "./components/SearchPage"
+
 function App() {
   return (
-    <>
-    Hello from the App
-    </>
+    <SearchPage />
   );
 }
 
