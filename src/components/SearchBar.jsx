@@ -1,7 +1,8 @@
 function SearchBar() {
   return (
-    <div className="searchBar">
-      This is the search Bar
+    <div className="filter">
+      <div className="heading">Location</div>
+      <input type="text" />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import SearchPage from "./components/SearchPage"
+import './App.css';
 
 function App() {
   return (
