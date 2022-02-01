@@ -1,10 +1,10 @@
-import SearchBar from "./SearchBar"
+import TalentFilter from "./TalentFilter"
 import ResultDisplay from "./ResultDisplay"
 
 function SearchPage() {
   return (
     <div className="homePage">
-      <SearchBar />
+      <TalentFilter />
       <ResultDisplay />
     </div>
   )

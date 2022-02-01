@@ -1,4 +1,4 @@
-function SearchBar() {
+function TalentFilter() {
   return (
     <div className="filter">
       <div className="heading">Location</div>
@@ -7,4 +7,4 @@ function SearchBar() {
   )
 }
 
-export default SearchBar;
+export default TalentFilter;
