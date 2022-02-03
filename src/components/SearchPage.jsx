@@ -1,20 +1,30 @@
 import TalentFilter from "./TalentFilter"
 import ResultDisplay from "./ResultDisplay"
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 
-function SearchPage() {
+function SearchPage({allTalent}) {
 
-  const [allTalent, setAllTalent] = useState();
-  const sampleData = require('../data/exampleData')
+  const [text, setText] = useState();
+  const [selectedTalent, setSelectedtalent] = useState();
 
   useEffect(() => {
-    setAllTalent(sampleData)
-  }, [sampleData])
+    if (text) {
+      setSelectedtalent(
+        allTalent.filter(function(talent) {
+          return talent.location.toLowerCase().includes(text.toLowerCase()) ? talent : null
+        })
+      )
+    } else {
+      setSelectedtalent(null)
+    }
+   
+  }, [text, allTalent])
+
 
   return (
     <div className="homePage">
-      <TalentFilter />
-      <ResultDisplay allTalent={allTalent} />
+      <TalentFilter allTalent={allTalent} text={text} setText={setText} />
+      <ResultDisplay selectedTalent={selectedTalent} />
     </div>
   )
 }

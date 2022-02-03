@@ -1,16 +1,14 @@
 import TalentCard from "./TalentCard"
-import { useEffect, useState } from 'react'
 
-function ResultDisplay( {allTalent} ) {
-
+function ResultDisplay( {selectedTalent} ) {
   
-  if (!allTalent) {
+  if (!selectedTalent) {
     return <div className="heading">Enter a location to search available Talent</div> 
   }
   
-  return allTalent && (
+  return selectedTalent && (
     <div className="display">
-      {allTalent.map(talent => (
+      {selectedTalent.map(talent => (
         <TalentCard 
           key={`${talent.date_of_birth}.${talent.name}`} 
           talent={talent}
