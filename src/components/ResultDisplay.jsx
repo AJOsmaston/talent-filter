@@ -1,18 +1,28 @@
 import TalentCard from "./TalentCard"
+import { useEffect, useState } from 'react'
 
 function ResultDisplay() {
 
-  const talent = {
-    "name": "Anthony",
-    "location": "At Home",
-    "date_of_birth": "1984-07-11"
+  const [allTalent, setAllTalent] = useState();
+  const sampleData = require('../data/exampleData')
+
+  useEffect(() => {
+    setAllTalent(sampleData)
+  }, [sampleData])
+
+  if (!allTalent) {
+    return <div className="heading">Enter a location to search available Talent</div> 
   }
   
-  return (
+  return  allTalent && (
     <div className="display">
-      <div className="heading">Enter a location to search available Talent</div>
-      <TalentCard talent={talent}/>
-    </div>
+      {allTalent.map(talent => (
+        <TalentCard 
+          key={`${talent.date_of_birth}.${talent.name}`} 
+          talent={talent}
+        />
+      ))}
+    </div> 
   )
 }
 

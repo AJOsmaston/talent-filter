@@ -8,19 +8,28 @@
 .homePage {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   margin: 10vw;
+  
 }
 
 .filter {
   width: 25vw;
+}
+
+.filter, .talentCard {
+  max-width: 15vw;
   border: 1px solid #000000;
-  margin: 2vw;
+  margin: 1vw;
   padding: 1vw;
 }
 
 .display {
-  width: 75vw;
-  padding: 3vw;
+  max-width: 55vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 0.2fr;
 }
 
 .heading {
@@ -29,10 +38,14 @@
 }
 
 input {
-    font-variant-numeric: tabular-nums;
-    font-size: 2vmax;
-    width: 100%;
-    height: 4vmax;
-    padding: 0 1vw;
-    margin: 0.5vw 0;
+  font-variant-numeric: tabular-nums;
+  font-size: 2vmax;
+  width: 100%;
+  height: 4vmax;
+  padding: 0 1vw;
+  margin: 0.5vw 0;
+}
+
+.talentCard {
+  max-width: 20vw;
 }
