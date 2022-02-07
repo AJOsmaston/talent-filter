@@ -7,6 +7,7 @@ function App() {
   const [allTalent, setAllTalent] = useState();
   const sampleData = require('./data/exampleData')
 
+  // sampleData can be replaced with a fetch here, or moved to context
   useEffect(() => {
     setAllTalent(sampleData)
   }, [sampleData])
