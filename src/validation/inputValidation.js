@@ -1,11 +1,10 @@
-const validate = (input) => {
+const validateLocation = (input) => {
   return input.map((item) => {
-    let lowercase = item.location.toLowerCase();
+    let lowercase = item["Location"].toLowerCase();
     let newLocation = lowercase[0].toUpperCase() + lowercase.substring(1);
-    return {
-      "location": newLocation
-    }
+    item["Location"] = newLocation
+    return item;
   })
 }
 
-module.exports = validate;
+module.exports = validateLocation;

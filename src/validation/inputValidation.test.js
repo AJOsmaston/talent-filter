@@ -1,32 +1,48 @@
-const validate = require('./inputValidation')
+const validateLocation = require('./inputValidation')
 
 describe('validation checks', () => {
   it('validates a single entry', () => {
-    expect(validate([
+    expect(validateLocation([
       {
-        "location": "HOME"
+        "Location": "HOME"
       }
     ])).toEqual([
       {
-        "location": "Home"
+        "Location": "Home"
       }
     ])
   })
 
   it('validates multiple entries', () => {
-    expect(validate([
+    expect(validateLocation([
       {
-        "location": "HOME"
+        "Location": "HOME"
       },
       {
-        "location": "AwAy"
+        "Location": "AwAy"
       }
     ])).toEqual([
       {
-        "location": "Home"
+        "Location": "Home"
       },
       {
-        "location": "Away"
+        "Location": "Away"
+      }
+    ])
+  })
+
+  it('selects location from a list of attributes', () => {
+        expect(validateLocation([
+      {
+        "Name": "ANTHONY",
+        "Location": "HOME",
+        "Something else!": "Another thing!"
+      }
+    ])).toEqual([
+      {
+         "Name": "ANTHONY",
+        "Location": "Home",
+        "Something else!": "Another thing!"
       }
     ])
   })
