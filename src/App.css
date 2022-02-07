@@ -30,16 +30,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 0.2fr;
+  padding: 1vw;
 }
 
 .heading {
-  font-size: 2vmax;
+  font-size: 1.5vmax;
   font-weight: bold;
 }
 
 input {
   font-variant-numeric: tabular-nums;
-  font-size: 2vmax;
+  font-size: 1vmax;
   width: 100%;
   height: 4vmax;
   padding: 0 1vw;

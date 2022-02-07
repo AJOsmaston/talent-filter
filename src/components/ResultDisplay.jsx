@@ -3,7 +3,11 @@ import TalentCard from "./TalentCard"
 function ResultDisplay( {selectedTalent} ) {
   
   if (!selectedTalent) {
-    return <div className="heading">Enter a location to search available Talent</div> 
+    return (
+      <div className="display">
+        <div className="heading">Enter a location to search available Talent</div> 
+      </div>
+    )
   }
   
   return selectedTalent && (
