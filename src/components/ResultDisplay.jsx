@@ -3,7 +3,7 @@ import TalentCard from "./TalentCard"
 function ResultDisplay( {selectedTalent} ) {
   
   // displays message if nothing in input box
-  if (!selectedTalent) {
+  if (selectedTalent.length === 0) {
     return (
       <div className="display">
         <div className="heading">Enter a location to search available Talent</div>

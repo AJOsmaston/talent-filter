@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 function SearchPage({allTalent}) {
 
   const [text, setText] = useState({value: ""});
-  const [selectedTalent, setSelectedtalent] = useState();
+  const [selectedTalent, setSelectedtalent] = useState([]);
 
   // this use effect checks to see whether a selection has been made, and filters the talent pool to match the selection
   useEffect(() => {
@@ -17,7 +17,7 @@ function SearchPage({allTalent}) {
         })
       )
     } else {
-      setSelectedtalent(null)
+      setSelectedtalent([])
     }
    //text and allTalent are given as dependencies so that the filter is run again if either of these change
   }, [text, allTalent])
