@@ -1,8 +1,8 @@
-function TalentFilter({ text, setText}) {
+function TalentFilter({ text, setText }) {
 
   // to update the state dynamically when typing
   const handleTextChange = (e) => {
-    setText(e.target.value)
+    setText({value: e.target.value})
   }
 
   return (
@@ -12,7 +12,7 @@ function TalentFilter({ text, setText}) {
         type="text"
         onChange={handleTextChange}
         placeholder='Please enter a location'
-        value={text}
+        value={text.value}
       />
     </div>
   )

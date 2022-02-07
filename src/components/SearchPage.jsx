@@ -4,16 +4,16 @@ import { useState, useEffect } from 'react'
 
 function SearchPage({allTalent}) {
 
-  const [text, setText] = useState();
+  const [text, setText] = useState({value: ""});
   const [selectedTalent, setSelectedtalent] = useState();
 
   // this use effect checks to see whether a selection has been made, and filters the talent pool to match the selection
   useEffect(() => {
-    if (text) {
+    if (text.value) {
       setSelectedtalent(
         allTalent.filter(function(talent) {
           // includes toLowerCase to make the search case insensitve
-          return talent.location.toLowerCase().includes(text.toLowerCase()) ? talent : null
+          return talent.location.toLowerCase().includes(text.value.toLowerCase()) ? talent : null
         })
       )
     } else {
