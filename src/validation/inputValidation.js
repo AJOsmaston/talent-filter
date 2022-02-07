@@ -1,9 +1,11 @@
 const validate = (input) => {
-  return [
-      {
-        "location": "Home"
-      }
-    ]
+  return input.map((item) => {
+    let lowercase = item.location.toLowerCase();
+    let newLocation = lowercase[0].toUpperCase() + lowercase.substring(1);
+    return {
+      "location": newLocation
+    }
+  })
 }
 
 module.exports = validate;
