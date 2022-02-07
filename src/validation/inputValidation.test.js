@@ -46,4 +46,16 @@ describe('validation checks', () => {
       }
     ])
   });
+
+  it('validates multiple word locations', () => {
+    expect(validateLocation([
+      {
+        "location": "HOME aNd AwAy"
+      }
+    ])).toEqual([
+      {
+        "location": "Home And Away"
+      }
+    ])
+  })
 });
