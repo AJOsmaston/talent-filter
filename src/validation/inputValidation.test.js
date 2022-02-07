@@ -4,46 +4,46 @@ describe('validation checks', () => {
   it('validates a single entry', () => {
     expect(validateLocation([
       {
-        "Location": "HOME"
+        "location": "HOME"
       }
     ])).toEqual([
       {
-        "Location": "Home"
+        "location": "Home"
       }
     ])
-  })
+  });
 
   it('validates multiple entries', () => {
     expect(validateLocation([
       {
-        "Location": "HOME"
+        "location": "HOME"
       },
       {
-        "Location": "AwAy"
+        "location": "AwAy"
       }
     ])).toEqual([
       {
-        "Location": "Home"
+        "location": "Home"
       },
       {
-        "Location": "Away"
+        "location": "Away"
       }
     ])
-  })
+  });
 
   it('selects location from a list of attributes', () => {
         expect(validateLocation([
       {
-        "Name": "ANTHONY",
-        "Location": "HOME",
-        "Something else!": "Another thing!"
+        "name": "ANTHONY",
+        "location": "HOME",
+        "something else!": "Another thing!"
       }
     ])).toEqual([
       {
-         "Name": "ANTHONY",
-        "Location": "Home",
-        "Something else!": "Another thing!"
+         "name": "ANTHONY",
+        "location": "Home",
+        "something else!": "Another thing!"
       }
     ])
-  })
+  });
 });

@@ -1,6 +1,7 @@
 import SearchPage from "./components/SearchPage"
 import './App.css';
 import { useEffect, useState } from 'react'
+import validateLocation from './validation/inputValidation'
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
 
   // sampleData can be replaced with a fetch here, or moved to context
   useEffect(() => {
-    setAllTalent(sampleData)
+    setAllTalent(
+      validateLocation(sampleData)
+    )
   }, [sampleData])
 
   return (

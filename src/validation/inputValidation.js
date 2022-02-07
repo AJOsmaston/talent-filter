@@ -1,8 +1,8 @@
 const validateLocation = (input) => {
   return input.map((item) => {
-    let lowercase = item["Location"].toLowerCase();
+    let lowercase = item["location"].toLowerCase();
     let newLocation = lowercase[0].toUpperCase() + lowercase.substring(1);
-    item["Location"] = newLocation
+    item["location"] = newLocation
     return item;
   })
 }
